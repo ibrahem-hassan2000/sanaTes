@@ -1,0 +1,35 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.App {
+    padding-top: 80px;
+}
+.add {
+    max-width: 420px;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.add .submit{
+    max-width: 100%;
+    width: 120px;
+    background-color: #228be6;
+    color: white;
+    border: none;
+    display: block;
+    margin: auto;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-top: 34px;
+}
+.add .submit:hover{
+    background-color: #1c7ed6;
+
+}
+
+.shopIcon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
