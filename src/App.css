@@ -2,8 +2,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body{
+    user-select: auto !important;
+}
 .App {
     padding-top: 80px;
+}
+.App.rtl{
+    direction: rtl;
+}
+.navbarPages{
+    direction: ltr;
 }
 .add {
     max-width: 420px;
@@ -32,4 +41,56 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+}
+/*homepage*/
+.homePage{
+    
+}
+.tableUsers{
+    min-width: 100%;
+    overflow-x: auto;
+}
+.tableUsers table{
+    min-width: 700px;
+}
+.table{
+
+}
+.btnTable{
+   
+display: flex;
+align-items: center;
+justify-content: flex-end;
+gap: 10px;
+}
+.deletBtn{
+    background-color: rgb(220 38 38);
+}
+.deletBtn:hover{
+    background-color: rgb(185 28 28);
+}
+.ShowBtn{
+    background-color: rgb(132 204 22);
+}
+.ShowBtn:hover{
+    background-color: rgb(101 163 13);
+}
+.EditBtn{
+    background-color: rgb(59 130 246);
+}
+.EditBtn:hover{
+    background-color: rgb(37 99 235);
+}
+.rtl th{
+    text-align: start;
+}
+.NewAddBtn{
+    background-color: rgb(56 189 248); 
+}
+.logoutbtn{
+    margin: 20px auto;
+    display: block;
+}
+.mantine-Group-root label{
+  padding: 0px 4px;
 }

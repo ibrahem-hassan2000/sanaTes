@@ -1,14 +1,17 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, PasswordInput, TextInput } from "@mantine/core";
 import Cookies from "js-cookie";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
 function Login() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
-
-  const t = Yup.object().shape({
+const [isUSer,setISUser]= useState(Cookies.get("login"))
+  const sh = Yup.object().shape({
     email: Yup.string().required("feeen email").email("not valid"),
 
     password: Yup.string()
@@ -20,7 +23,7 @@ function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(t),
+    resolver: yupResolver(sh),
   });
   const onSubmit = (data) => {
     console.log(data);
@@ -33,33 +36,49 @@ function Login() {
   const handelLogin = (name) => {
     Cookies.set("login", true);
     Cookies.set("nameLogin", name);
-    navigate('/')
+    navigate("/");
   };
-
+console.log(Cookies.get("login"));
   return (
     <div className="add">
-      <h2 style={{ textAlign: "center" }}>Login</h2>
-
-      <form onSubmit={handleSubmit(onSubmit, err)}>
+      <h2 style={{ textAlign: "center" }}>{t("login.title")}</h2>
+      {
+        isUSer?<Button
+        onClick={() => {
+          Cookies.remove("nameLogin");
+          Cookies.set("login", false);
+          setISUser(false)
+        }}
+        className="logoutbtn bg-red-400 mx-auto  "
+        style={{ backgroundColor: "#f87171" }}
+      >
+        {t("login.Logout")}
+      </Button>:  <form onSubmit={handleSubmit(onSubmit, err)}>
         {/* include validation with required or other standard HTML validation rules */}
         <TextInput
-          label="Email"
-          placeholder="Enter Your Email "
+          label={t("login.email")}
+          placeholder={t("login.enterEmail")}
           {...register("email")}
           radius="md"
           error={errors.email?.message}
         />
         <PasswordInput
-          label="password"
-          placeholder="Enter Your Password"
+          label={t("login.password")}
+          placeholder={t("login.enterPassword")}
           radius="md"
           {...register("password")}
           error={errors.password?.message}
         />
-        <Button type="submit" className="submit">
-          LogIn
-        </Button>
+        {!isUSer && (
+          <Button type="submit" className="submit">
+            {t("login.title")}
+          </Button>
+        ) }
       </form>
+      }
+    
+     
+      
     </div>
   );
 }

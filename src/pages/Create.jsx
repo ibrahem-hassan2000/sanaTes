@@ -1,7 +1,9 @@
-import { Box, Button, TextInput } from "@mantine/core";
+import { Box, Button, Checkbox, Group, Input, NumberInput, Radio, Select, TextInput, Textarea } from "@mantine/core";
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { DatePickerInput } from "@mantine/dates";
+
 function Create() {
   const t = Yup.object().shape({
     name: Yup.string().required("ffen name"),
@@ -42,6 +44,41 @@ function Create() {
             radius="md"
             error={errors.email?.message}
           />
+            <Select
+      label="Select Membership Type"
+      placeholder="Membership Type  "
+      data={['Basic', 'Premium', 'VIP']}
+      defaultValue="Basic"
+      clearable
+    />
+     <Checkbox
+      
+      label="I agree to sell my privacy"
+    />
+    <NumberInput label="Hide controls" placeholder="Hide controls" hideControls />
+    <Radio.Group
+      name="favoriteFramework"
+      label="Gender"
+      withAsterisk
+    >
+      <Group mt="xs">
+        <Radio value="Male" label="Male" />
+        <Radio value="Female" label="Female" />
+      </Group>
+    </Radio.Group>
+    <Textarea
+        placeholder="Enter your Address"
+        label="Address"
+        autosize
+        minRows={2}
+      />
+      <Input value="gg" disabled placeholder="Input component" />
+      <DatePickerInput
+      label="Pick date"
+      placeholder="Pick date"
+     
+    />
+        <NumberInput label="Phone Number" placeholder="Hide controls" hideControls />
           <Button type="submit" className="submit" >Submit</Button>
         
         </form>

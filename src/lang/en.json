@@ -1,0 +1,22 @@
+{
+    "nav": {
+      "home": "HOME",
+      "edit": "Edit",
+      "create": "Create",
+      "Show": "Show"
+    },
+    "index": {
+      "title": "Home",
+      "members":"Members"
+    },
+    "login": {
+      "title": "Login",
+      "email":"Email",
+      "enterEmail":"Enter Your Email ",
+      "password":"Password",
+      "enterPassword":"Enter Your Password",
+    "Logout":"LogOut"
+
+    }
+  }
+  
