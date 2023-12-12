@@ -60,7 +60,7 @@ function App() {
   return (
     <RecoilRoot>
       <div
-        className={`App select-all ${
+        className={`App  ${
           i18n.resolvedLanguage === "en" ? "" : "rtl"
         } `}
       >
