@@ -1,6 +1,6 @@
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
-import "../dist/output.css";
 import "@mantine/core/styles.css";
+import "./index.css"
 import "./App.css";
 
 import Index from "./pages/Index";
