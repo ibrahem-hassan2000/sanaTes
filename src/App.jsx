@@ -10,6 +10,7 @@ import Show from "./pages/Show";
 import HeaderNav from "./components/HeaderNav";
 import { useTranslation } from "react-i18next";
 import { RecoilRoot } from "recoil";
+import Footer from "./components/Footer";
 
 const Layout = () => {
   return (
@@ -21,7 +22,7 @@ const Layout = () => {
       >
         <Outlet />
       </main>
-      <h2>footer</h2>
+      <Footer/>
     </>
   );
 };

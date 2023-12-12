@@ -33,7 +33,7 @@ function HeaderNav() {
             Logo
           </Link>
           <Button
-            className="text-gray-800 absolute right-16 top-4 hover:bg-green-300 duration-500 bg-green-200"
+            className="text-gray-800 absolute right-32 md:right-16 top-4 hover:bg-green-300 duration-500 bg-green-200"
             onClick={() => {
               changeLang();
             }}
