@@ -1,16 +1,15 @@
-import {   Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import "../dist/output.css";
-import '@mantine/core/styles.css';
+import "@mantine/core/styles.css";
 import "./App.css";
 
 import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Create from "./pages/Create";
-import Edit from "./pages/Edit";
 import Show from "./pages/Show";
 import HeaderNav from "./components/HeaderNav";
 import { useTranslation } from "react-i18next";
-
+import { RecoilRoot } from "recoil";
 
 const Layout = () => {
   return (
@@ -22,7 +21,7 @@ const Layout = () => {
       >
         <Outlet />
       </main>
-     <h2>footer</h2>
+      <h2>footer</h2>
     </>
   );
 };
@@ -30,40 +29,43 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    children:[
+    children: [
       {
         path: "/",
-        element: <Index/>,
+        element: <Index />,
       },
       {
-        path: "create",
-        element: <Create/> ,
+        path: "/create",
+        element: <Create />,
       },
       {
-        path: "login",
-        element: <Login/> ,
+        path: "/login",
+        element: <Login />,
       },
       {
-        path: "edit",
-        element: <Edit/> ,
+        path: "/edit/:id",
+        element: <Create />,
       },
       {
-        path: "show",
-        element: <Show/> ,
-      }
-    ]
+        path: "/show/:id",
+        element: <Show />,
+      },
+    ],
   },
- 
 ]);
 function App() {
-  const { i18n} = useTranslation();
+  const { i18n } = useTranslation();
 
   return (
-    <div className={`App select-all ${ i18n.resolvedLanguage === "en"?"":"rtl"} `}>
-      
-      <RouterProvider router={router} />
-     
-    </div>
+    <RecoilRoot>
+      <div
+        className={`App select-all ${
+          i18n.resolvedLanguage === "en" ? "" : "rtl"
+        } `}
+      >
+        <RouterProvider router={router} />
+      </div>
+    </RecoilRoot>
   );
 }
 

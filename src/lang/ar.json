@@ -7,14 +7,57 @@
   },
   "index": {
     "title": "الرئسيه",
-    "members":"الاعضاء"
+    "members": "الاعضاء",
+    "add": "إضافة عضو جديد",
+    "filter": "تصفية الأعضاء بالاسم",
+    "enterName": "ادخل الاسم",
+    "name": "الاسم",
+    "email": "البريد الالكتروني",
+    "gender": "الجنس",
+    "delet": "حذف",
+    "show": "عرض",
+    "edit": "تعديل",
+    "back":"رجوع"
+
   },
   "login": {
     "title": "تسجيل دخول",
-    "email":"البريد الالكتروني",
-    "enterEmail":"أدخل بريدك الإلكتروني",
-    "password":"كلمة المرور",
-    "enterPassword":"أدخل كلمة المرور",
-    "Logout":"تسجيل الخروج"
+    "email": "البريد الالكتروني",
+    "enterEmail": "أدخل بريدك الإلكتروني",
+    "password": "كلمة المرور",
+    "enterPassword": "أدخل كلمة المرور",
+    "Logout": "تسجيل الخروج"
+  },
+  "show": {
+    "address": "العنوان",
+    "brith": "تاريخ الميلاد",
+    "gender": "الجنس",
+    "idNum": "رقم الهوية"
+  },
+  "add": {
+    "title": "إضافة أو تعديل مستخدم",
+    "name": "الاسم",
+    "enterName": "أدخل اسمك",
+    "email": "البريد الالكتروني",
+    "enterEmail": "أدخل بريدك الإلكتروني",
+    "selectMembership": "حدد نوع العضوية",
+    "basic": "Basic",
+    "premium": "Premium",
+    "vip": "VIP",
+    "subscribe": "اشترك في النشرة الإخبارية",
+    "iDNumber": "رقم الهوية",
+    "enterID": "أدخل رقم هويتك",
+    "gender": "الجنس",
+    "male": "ذكر",
+    "female": "أنثى",
+    "address": "العنوان",
+    "enterAddress": "أدخل عنوانك",
+    "birth": "تاريخ الميلادك",
+    "startDate": "تاريخ بدء العضوية",
+    "PhoneNumber": "رقم الهاتف",
+    "EnterPhoneNumber": "أدخل رقم هاتفك",
+    "addBtn": "إضافة",
+    "edit": "تعديل",
+    "back":"رجوع"
   }
 }
