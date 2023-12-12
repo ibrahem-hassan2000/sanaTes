@@ -1,7 +1,7 @@
 import { deleteDoc, doc, getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { db } from "../Firebase";
+import { db } from "../firebase";
 import { useTranslation } from "react-i18next";
 import { Button } from "@mantine/core";
 

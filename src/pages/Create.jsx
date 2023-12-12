@@ -13,7 +13,7 @@ import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useEffect, useState } from "react";
-import { db, storage } from "../Firebase";
+import { db, storage } from "../firebase";
 import {
   deleteObject,
   getDownloadURL,
