@@ -4,7 +4,7 @@ import { Table } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { collection, deleteDoc, doc, onSnapshot } from "firebase/firestore";
-import { db } from "../Firebase";
+import { db } from "../firebase";
 import { useRecoilState } from "recoil";
 import { user } from "../../atoms";
 
