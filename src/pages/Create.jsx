@@ -50,7 +50,7 @@ function Create() {
   const navigate = useNavigate();
   //State
   const [GetData, setGetData] = useState([]);
-
+  console.log(GetData);
   const [IdNum, setIdNum] = useState(GetData?.idNum);
 
   const [Birth, setBirth] = useState("");
@@ -93,10 +93,10 @@ function Create() {
     const allData = Imgs
       ? { ...data, brith: Birth, imageUser: Imgs }
       : { ...data, brith: Birth };
-
+    console.log(allData);
     if (id) {
       await updateDoc(UserRef, {
-        ...data,
+        ...allData,
       });
     } else {
       await addDoc(UserRef, {
@@ -160,6 +160,18 @@ function Create() {
       return { ...snapshot.data() };
     }
   };
+  /*const getNameImg = (url) => {
+    if (url) {
+      const urlParts = url.split("/");
+      const fileNameWithQuery = urlParts[urlParts.length - 1];
+      const fileNameParts = fileNameWithQuery.split("?");
+      const fileName = fileNameParts[0];
+      const fileNameWithSlash = fileName.replace(/%/g, "/");
+      const modifiedFileName = fileNameWithSlash.replace('2F', '');
+      return modifiedFileName;
+    } else return "";
+  };
+  getNameImg();*/
   return (
     <div className="add">
       <h2 style={{ textAlign: "center" }}>{t("add.title")}</h2>
@@ -259,6 +271,47 @@ function Create() {
           />
           <div className="inputChat">
             <div className="boxInput">
+              {/*id ? (
+                <>
+                  <img
+                    src={GetData?.imageUser ? GetData.imageUser : ""}
+                    className="img img-thumbnail m-1 imgPreview"
+                    style={{
+                      background: "transparent",
+                      borderRadius: "50%",
+                      border: "1px solid #7fd196",
+                      objectFit: "contain",
+                      width: "120px",
+                      height: "120px",
+                    }}
+                    alt="person"
+                  />
+                  <div
+                    className="RemoveImge"
+                    onClick={() => {
+                      deleteObject(
+                        ref(
+                          storage,
+                          getNameImg(
+                            GetData?.imageUser ? GetData?.imageUser : ""
+                          )
+                        )
+                      )
+                        .then(() => {
+                          console.log("delet form fir");
+                        })
+                        .catch((error) => {
+                          console.log("noooooooooooo delet form fir");
+                          console.log(error);
+                        });
+                    }}
+                  >
+                    <p>X</p>
+                  </div>
+                </>
+              ) : (
+                <></>
+              )*/}
               {selectedFile.name && (
                 <div className="boxImages upload_images">
                   <div
